@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>AI風險辨識回饋問卷</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background-color: #f3f7fc;
+            padding: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #003366;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI風險辨識回饋問卷</h1>
+    <form onsubmit="event.preventDefault(); showMessage();">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">電話：</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="feedback">意見回饋：</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <button type="submit">送出</button>
+    </form>
+
+    <script>
+        function showMessage() {
+            document.body.innerHTML = "<h1 style='color:#cc0000;'>你被騙了喔！其實我們的證書都是假的 😆</h1><p>不過我們真的很感謝你的參與與回饋！</p>";
+        }
+    </script>
+</body>
+</html>
