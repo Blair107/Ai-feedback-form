@@ -1,1 +1,104 @@
 # Ai-feedback-form
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 證書回饋問卷</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #003366;
+      margin-top: 40px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005599;
+    }
+
+    #result {
+      display: none;
+      margin-top: 30px;
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AI 回饋問卷</h1>
+
+  <form id="feedbackForm">
+    <label for="name">姓名：</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">電話：</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="feedback">意見回饋：</label>
+    <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+    <button type="submit">送出</button>
+  </form>
+
+  <div id="result">你被騙了喔！其實我們的證書都是假的 😈</div>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      form.style.display = "none";
+      result.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
